@@ -7,66 +7,115 @@
     <link rel="icon" href="/src/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #1E3A8A;
+            --secondary-color: #4F97FF;
+            --accent-color: #66B2FF;
+            --text-color: #eaeaea;
+            --card-bg: #2a4a9a;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background-color: #1E3A8A;
-            color: #eaeaea;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow-x: hidden;
         }
         .navbar {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            background-color: #1E3A8A;
+            background-color: var(--primary-color);
             padding: 1rem;
         }
         .navbar a {
-            color: #4F97FF;
+            color: var(--secondary-color);
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         .navbar a:hover {
-            background-color: #66B2FF;
+            background-color: var(--accent-color);
             border-radius: 5px;
             color: #FFFFFF;
         }
         .content {
-            margin: 0 15%; /* Set margin to 15% of the page */
+            padding: 2rem 5%;
         }
-        .container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 80vh;
+        .hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            animation: slideInFromTop 1s ease-out;
         }
-        .text {
-            flex: 1;
-            text-align: left;
-            margin-right: 20px; /* Add margin to the right of the text */
-        }
-        .info {
-            flex: 1;
-            text-align: left;
-            margin-left: 20px; /* Add margin to the left of the info section */
-        }
-        .info h2 {
-            font-size: 2.5rem;
-            color: #4F97FF;
-        }
-        .info p {
-            font-size: 1.5rem;
-            color: #FFFFFF;
-        }
-        .text h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 3.5rem;
+            color: var(--secondary-color);
             margin: 0;
-            color: #4F97FF;
         }
-        .text p {
+        .hero p {
             font-size: 1.5rem;
-            margin: 1rem 0;
-            color: #FFFFFF;
+            color: var(--text-color);
+        }
+        .hero a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            animation: slideInFromBottom 0.8s ease-out forwards;
+        }
+        /* Staggered animation for cards */
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
+        .card:nth-child(4) { animation-delay: 0.8s; }
+        .card h2 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        .card p, .card ul {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+        .card ul {
+            padding-left: 1.2rem;
+        }
+        .card li {
+            margin-bottom: 0.5rem;
+        }
+        @keyframes slideInFromTop {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideInFromBottom {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .content {
+                padding: 2rem 5%;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero p {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
@@ -78,19 +127,34 @@
         <a href="/portfolio">Portfolio</a>
     </nav>
     <div class="content">
-        <div class="container">
-            <div class="text">
-                <h1>About Me</h1>
-                <p><strong>Hi, I'm Daniel. Learn more about my background and experience.</strong></p>
-                <p style="font-weight: 600;"><a href="mailto:da577898@ucf.edu" style="color: #b1d4ff;">Email</a> | <a href="https://www.linkedin.com/in/daniel-hernandez-166425282/" target="_blank" style="color: #b1d4ff;">LinkedIn</a></p>
-            </div>
-            <div class="info">
+        <div class="hero">
+            <h1>About Me</h1>
+            <p>Hi, I'm Daniel. Learn more about my background, experience, and skills.</p>
+            <p>
+                <a href="mailto:da577898@ucf.edu">Email</a> |
+                <a href="https://www.linkedin.com/in/daniel-hernandez-166425282/" target="_blank">LinkedIn</a>
+            </p>
+        </div>
+        <div class="cards-container">
+            <div class="card">
                 <h2>Background</h2>
-                <p style="font-weight: 600;">I have a background in web development and software development. I specialize in creating responsive and user-friendly websites.</p>
+                <p>I am a passionate and driven sophomore computer science major at UCF. With a strong foundation in web and software development, I specialize in creating responsive, user-friendly digital solutions that effectively meet user needs.</p>
+            </div>
+            <div class="card">
                 <h2>Experience</h2>
-                <p style="font-weight: 600;">Over the past few years, I have worked on various projects ranging from small business websites to large e-commerce platforms.</p>
+                <p>Throughout my academic and personal projects, I have gained hands-on experience in building and managing applications. I have worked on diverse projects, from dynamic websites for small businesses to backend development for multiplayer games.</p>
+            </div>
+            <div class="card">
                 <h2>Skills</h2>
-                <p style="font-weight: 600;">Java, JavaScript, Python, C, C++, CSS, HTML, LUA, and SQL.</p>
+                <ul>
+                    <li><strong>Languages:</strong> Java, JavaScript, Python, C, C++, HTML, CSS, LUA, SQL</li>
+                    <li><strong>Methodologies:</strong> DevOps, Agile</li>
+                    <li><strong>Tools:</strong> Git, Docker, VS Code</li>
+                </ul>
+            </div>
+             <div class="card">
+                <h2>Hobbies</h2>
+                <p>Beyond coding, I have a passion for 3D modeling and animation, which allows me to explore the intersection of technology and creativity. I also enjoy competitive gaming, which has sharpened my strategic thinking and problem-solving skills under pressure.</p>
             </div>
         </div>
     </div>
