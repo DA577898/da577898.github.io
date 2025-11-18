@@ -47,49 +47,18 @@
             text-align: center;
             margin-bottom: 2rem;
         }
-        .container h1 {
-            font-size: 2.5rem;
-            text-align: center;
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-        }
-        .container .contact-info {
-            text-align: center;
-            font-size: 1rem;
+        .resume-section {
             margin-bottom: 2rem;
-            color: #b1d4ff;
         }
-        .container .summary {
-            text-align: center;
-            font-size: 1.1rem;
-            margin-bottom: 3rem;
-        }
-        .container h2 {
+        .resume-section h2 {
             font-size: 2rem;
             color: #66B2FF;
             border-bottom: 2px solid #4F97FF;
             padding-bottom: 0.5rem;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
         }
-        .container .resume-item {
-            margin-bottom: 1rem;
-        }
-        .container .resume-item h3 {
-            font-size: 1.3rem;
-            color: #FFFFFF;
-            margin-bottom: 0.5rem;
-            font-weight: bold;
-        }
-        .container ul {
-            list-style-type: disc;
-            padding-left: 2rem;
-            margin-top: 0.5rem;
-        }
-        .container li {
-            font-size: 1.1rem;
+        .resume-section p, .resume-section ul {
+            font-size: 1.2rem;
             line-height: 1.6;
-            margin-bottom: 0.5rem;
         }
         .download-button {
             display: block;
@@ -107,15 +76,6 @@
         .download-button:hover {
             background-color: #66B2FF;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @media (max-width: 768px) {
-            .content {
-                margin: 0 5%;
-            }
-        }
     </style>
 </head>
 <body>
@@ -128,61 +88,63 @@
     <div class="content">
         <div class="container">
             <h1 class="title">Resume</h1>
-            <h1>DANIEL HERNANDEZ</h1>
-<p class='contact-info'>Orlando, FL | (754) 317 -3621 | da577898@ucf.edu | www.linkedin.com/in/daniel -hernandez -166425282/ | GPA: 4.0</p>
-<p class='summary'>Sophomore computer science major at UCF with over 4 years of experience in diverse projects and startups. Effective communication and interpersonal skills, with a strong passion to create effective user-oriented solutions. Looking to leverage technical skills to enhance digital solutions with effective software development.</p>
-<h2>Education</h2>
-<div class='resume-item'><h3>University of Central Florida - Undergraduate Student of Science in Computer Science August 2024 - May 2027</h3></div>
-<div class='resume-item'><h3>Relevant Coursework: Performant Programming in C and Java.</h3></div>
-<div class='resume-item'><h3>University of Florida - Undergraduate Student of Science in Computer Science June 2023 – July 2024</h3></div>
-<div class='resume-item'><h3>Relevant Coursework: Performant Programming in Python, JavaScript, and Java, Data Structures and Algorithms. Engineering and</h3></div>
-<div class='resume-item'><h3>CAD.</h3></div>
-<h2>Projects</h2>
-<div class='resume-item'><h3>Video Game Server – C, JS May 2020 -September 2021</h3></div>
-<ul>
-<li>Developed backend for a n online multiplayer video game, which emulated real -life scenarios.</li>
-<li>Managed server configurations, ensuring server operated at peak efficiency.</li>
-</ul>
-<div class='resume-item'><h3>Web Design – HTML, CSS August 2023 -Current</h3></div>
-<ul>
-<li>Develope d a website for a tourist agency in Puerto Rico</li>
-<li>Guaranteed high efficiency for setting schedules, organizing work times, etc.</li>
-<li>Assessed user statistics and behaviors to increase sales rates.</li>
-</ul>
-<h2>Skills</h2>
-<div class='resume-item'><h3>Programming : Java, JavaScript, Python, HTML, CSS, LUA, SQL</h3></div>
-<div class='resume-item'><h3>Methodologies : DevOps</h3></div>
-<div class='resume-item'><h3>Languages : Spanish, English</h3></div>
-<h2>Certifications</h2>
-<div class='resume-item'><h3>Autodesk Certified User: Fusion 360®</h3></div>
-<ul>
-<li>Skills: 3D Modeling · Computer -Aided Design (CAD) 3D Modeling</li>
-</ul>
-<div class='resume-item'><h3>Multiplatform animation using Adobe Animate</h3></div>
-<ul>
-<li>Skills: Computer Animation · Rendering · Digital Illustration</li>
-</ul>
-<div class='resume-item'><h3>MTA: Introduction to Programming Using JavaScript</h3></div>
-<ul>
-<li>Skills: JavaScript · Web Development · Programming</li>
-</ul>
-<div class='resume-item'><h3>Onshape Introduction to Sketching Course Completion</h3></div>
-<ul>
-<li>Skills: 3D Modeling · Computer -Aided Design (CAD) 3D Modeling</li>
-</ul>
-<h2>Work Experience</h2>
-<div class='resume-item'><h3>Bureau of Economic and Business Research - Telephone Interviewer August 2023 – November 2023</h3></div>
-<ul>
-<li>Interviewed on various topics, including market research, customer satisfaction, and public opinion.</li>
-<li>Documented with healthcare companies to ensure customer satisfaction , data research and feedback.</li>
-</ul>
-<h2>Involvement</h2>
-<div class='resume-item'><h3>Orange County Public Schools October 2022 – March 2023</h3></div>
-<div class='resume-item'><h3>Peer Tutor</h3></div>
-<ul>
-<li>Mentored and coached fellow students, helping them understand new topics and improve their academic performance.</li>
-<li>Yielded positive grades through virtual meetings through Microsoft Teams, with high adaptability for their specific needs.</li>
-</ul>
+            <div class="resume-section">
+                <h2>DANIEL HERNANDEZ</h2>
+                <p>Orlando, FL | (754) 317-3621 | da577898@ucf.edu | www.linkedin.com/in/daniel-hernandez-166425282/ | GPA: 4.0</p>
+                <p>Sophomore computer science major at UCF with over 4 years of experience in diverse projects and startups. Effective communication and interpersonal skills, with a strong passion to create effective user-oriented solutions. Looking to leverage technical skills to enhance digital solutions with effective software development.</p>
+            </div>
+            <div class="resume-section">
+                <h2>EDUCATION</h2>
+                <p><strong>University of Central Florida</strong> - Undergraduate Student of Science in Computer Science, August 2024 - May 2027</p>
+                <p>Relevant Coursework: Performant Programming in C and Java.</p>
+                <p><strong>University of Florida</strong> - Undergraduate Student of Science in Computer Science, June 2023 – July 2024</p>
+                <p>Relevant Coursework: Performant Programming in Python, JavaScript, and Java, Data Structures and Algorithms. Engineering and CAD.</p>
+            </div>
+            <div class="resume-section">
+                <h2>PROJECTS</h2>
+                <p><strong>Video Game Server – C, JS</strong> May 2020 - September 2021</p>
+                <ul>
+                    <li>Developed backend for an online multiplayer video game, which emulated real-life scenarios.</li>
+                    <li>Managed server configurations, ensuring server operated at peak efficiency.</li>
+                </ul>
+                <p><strong>Web Design – HTML, CSS</strong> August 2023 - Current</p>
+                <ul>
+                    <li>Developed a website for a tourist agency in Puerto Rico</li>
+                    <li>Guaranteed high efficiency for setting schedules, organizing work times, etc.</li>
+                    <li>Assessed user statistics and behaviors to increase sales rates.</li>
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2>SKILLS</h2>
+                <p><strong>Programming:</strong> Java, JavaScript, Python, HTML, CSS, LUA, SQL</p>
+                <p><strong>Methodologies:</strong> DevOps</p>
+                <p><strong>Languages:</strong> Spanish, English</p>
+            </div>
+            <div class="resume-section">
+                <h2>CERTIFICATIONS</h2>
+                <ul>
+                    <li>Autodesk Certified User: Fusion 360® (Skills: 3D Modeling, Computer-Aided Design (CAD))</li>
+                    <li>Multiplatform animation using Adobe Animate (Skills: Computer Animation, Rendering, Digital Illustration)</li>
+                    <li>MTA: Introduction to Programming Using JavaScript (Skills: JavaScript, Web Development, Programming)</li>
+                    <li>Onshape Introduction to Sketching Course Completion (Skills: 3D Modeling, Computer-Aided Design (CAD))</li>
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2>WORK EXPERIENCE</h2>
+                <p><strong>Bureau of Economic and Business Research</strong> - Telephone Interviewer, August 2023 – November 2023</p>
+                <ul>
+                    <li>Interviewed on various topics, including market research, customer satisfaction, and public opinion.</li>
+                    <li>Documented with healthcare companies to ensure customer satisfaction, data research and feedback.</li>
+                </ul>
+            </div>
+            <div class="resume-section">
+                <h2>INVOLVEMENT</h2>
+                <p><strong>Orange County Public Schools</strong> - Peer Tutor, October 2022 – March 2023</p>
+                <ul>
+                    <li>Mentored and coached fellow students, helping them understand new topics and improve their academic performance.</li>
+                    <li>Yielded positive grades through virtual meetings through Microsoft Teams, with high adaptability for their specific needs.</li>
+                </ul>
+            </div>
             <a href="/src/Daniel Hernandez Resume.pdf" download class="download-button">Download Resume</a>
         </div>
     </div>
