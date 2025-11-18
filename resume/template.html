@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - Daniel's Portfolio</title>
+    <link rel="icon" href="/src/favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            background: linear-gradient(135deg, #1E3A8A, #2a4a9a);
+            color: #eaeaea;
+            animation: pageTransition 1s ease-in-out;
+        }
+        @keyframes pageTransition {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .navbar {
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            background: rgba(30, 58, 138, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+        }
+        .navbar a {
+            color: #b1d4ff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+        .navbar a:hover {
+            color: #FFFFFF;
+            transform: translateY(-2px);
+        }
+        .content {
+            margin: 0 15%;
+            padding: 2rem 0;
+        }
+        .container {
+            background-color: #2a4a9a;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        .title {
+            font-size: 3rem;
+            color: #4F97FF;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .container h1 {
+            font-size: 2.5rem;
+            text-align: center;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+        }
+        .container .contact-info {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            color: #b1d4ff;
+        }
+        .container .summary {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+        }
+        .container h2 {
+            font-size: 2rem;
+            color: #66B2FF;
+            border-bottom: 2px solid #4F97FF;
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .container .resume-item {
+            margin-bottom: 1rem;
+        }
+        .container .resume-item h3 {
+            font-size: 1.3rem;
+            color: #FFFFFF;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .container ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+            margin-top: 0.5rem;
+        }
+        .container li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .download-button {
+            display: block;
+            width: 200px;
+            margin: 2rem auto 0;
+            padding: 1rem;
+            background-color: #4F97FF;
+            color: #FFFFFF;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .download-button:hover {
+            background-color: #66B2FF;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .content {
+                margin: 0 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="../">Home</a>
+        <a href="/about">About</a>
+        <a href="/resume">Resume</a>
+        <a href="/portfolio">Portfolio</a>
+    </nav>
+    <div class="content">
+        <div class="container" data-aos="fade-up">
+            <h1 class="title">Resume</h1>
+            {{RESUME_CONTENT}}
+            <a href="/src/Daniel Hernandez Resume.pdf" download class="download-button">Download Resume</a>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
