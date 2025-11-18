@@ -3,95 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Daniel's Portfolio</title>
+    <title>Daniel Hernandez - Portfolio</title>
     <link rel="icon" href="src/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             font-family: 'Montserrat', sans-serif;
             margin: 0;
-            background-color: #1E3A8A;
+            background-color: #121212;
             color: #eaeaea;
         }
         .navbar {
             display: flex;
             justify-content: flex-end;
             align-items: center;
-            background-color: #1E3A8A;
+            background-color: #1f1f1f;
             padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
         .navbar a {
-            color: #4F97FF;
+            color: #00aaff;
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
+            transition: color 0.3s;
         }
         .navbar a:hover {
-            background-color: #66B2FF;
-            border-radius: 5px;
-            color: #FFFFFF;
+            color: #00ffff;
         }
-        .content {
-            margin: 0 15%; /* Set margin to 15% of the page */
+        section {
+            padding: 100px 15%;
+            min-height: 100vh;
+            border-bottom: 1px solid #333;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
         }
-        .container {
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        #home {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            height: 80vh;
+            justify-content: center;
+            text-align: center;
         }
-        .text {
-            flex: 2;
-            text-align: left;
-            margin: 0 40px 0 180px; /* Adjust margin to the left and right of the text */
-        }
-        .image {
-            flex: 1;
-            text-align: right;
-            margin-left: 20px; /* Adjust margin to the left of the image */
-            margin-right: 180px; /* Increase margin to the right of the image */
-        }
-        img {
-            height: 320px;
-            width: auto;
-        }
-        .text h1 {
+        .section-title {
             font-size: 3rem;
-            margin: 0;
-            color: #4F97FF;
+            color: #00aaff;
+            text-align: center;
+            margin-bottom: 2rem;
         }
-        .text p {
-            font-size: 1.5rem;
+        .card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 1rem;
             margin: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+        }
+        .portfolio-card {
+            background-color: #1f1f1f;
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+        .portfolio-card:hover {
+            transform: scale(1.05);
+        }
+        .portfolio-card img {
+            height: 100px;
+            width: 100px;
+            margin-bottom: 1rem;
+            border-radius: 50%;
+            background-color: #FFFFFF;
+            padding: 10px;
+            object-fit: contain;
+        }
+        .portfolio-card h3 {
+            color: #00aaff;
+        }
+        .download-button {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 1rem 2rem;
+            background-color: #00aaff;
             color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #00ffff;
         }
     </style>
 </head>
 <body>
+
     <nav class="navbar">
-        <a href="./">Home</a>
-        <a href="/about">About</a>
-        <a href="/resume">Resume</a>
-        <a href="/portfolio">Portfolio</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#portfolio">Portfolio</a>
     </nav>
-    <div class="content">
-        <div class="container">
-            <div class="text">
-                <h1>Daniel Hernandez</h1>
-                <p><strong>Welcome to my portfolio. I'm a CS undergraduate at the University of Central Florida. Explore this website to learn more about me!</strong></p>
-            </div>
-            <div class="image">
-                <img src="src/avatar.png" alt="My Image">
-            </div>
+
+    <section id="home">
+        <div>
+            <h1>Daniel Hernandez</h1>
+            <p>Welcome to my new portfolio. I'm a CS undergraduate at the University of Central Florida.</p>
         </div>
-    </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="card">
+            <p>Hi, I'm Daniel. I have a background in web and software development, specializing in creating responsive and user-friendly websites. Over the past few years, I have worked on various projects ranging from small business websites to large e-commerce platforms. My skills include Java, JavaScript, Python, C, C++, CSS, HTML, LUA, and SQL.</p>
+            <p><a href="mailto:da577898@ucf.edu" style="color: #00aaff;">Email</a> | <a href="https://www.linkedin.com/in/daniel-hernandez-166425282/" target="_blank" style="color: #00aaff;">LinkedIn</a></p>
+        </div>
+    </section>
+
+    <section id="resume">
+        <h2 class="section-title">Resume</h2>
+        <div class="card">
+            <h3>DANIEL HERNANDEZ</h3>
+            <p>Orlando, FL | (754) 317-3621 | da577898@ucf.edu | GPA: 4.0</p>
+            <p>Sophomore computer science major at UCF with over 4 years of experience in diverse projects and startups...</p>
+            <a href="/src/Daniel Hernandez Resume.pdf" download class="download-button">Download Resume</a>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2 class="section-title">Portfolio</h2>
+        <div class="portfolio-grid">
+            <a href="https://www.undertourpr.com" class="portfolio-card">
+                <img src="/src/undertour.png" alt="UnderTour">
+                <h3>UnderTour PR</h3>
+                <p>Front-end development for the company's main website.</p>
+            </a>
+            <a href="https://www.partyphotoorlando.com" class="portfolio-card">
+                <img src="/src/partyphotoorlando.png" alt="PartyPhotoOrlando">
+                <h3>PartyPhotoOrlando</h3>
+                <p>Redesigned the website to enhance user experience and visual appeal.</p>
+            </a>
+            <a href="https://maverick.eecs.ucf.edu/seniordesign/fa2024sp2025/g02/" class="portfolio-card">
+                <img src="/src/ucf.png" alt="UCF Senior Design">
+                <h3>Senior Design Project</h3>
+                <p>Developed the website for electrical engineering students' senior design project.</p>
+            </a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar a');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    if (targetSection) {
+                        window.scrollTo({
+                            top: targetSection.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+
 </body>
 </html>
-<style>
-    .text h1 {
-        font-size: 4rem; /* Increase font size of the heading */
-    }
-    .text p {
-        font-size: 2rem; /* Increase font size of the paragraph */
-    }
-</style>
