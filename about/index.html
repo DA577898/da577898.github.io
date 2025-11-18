@@ -25,6 +25,7 @@
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
         }
         .navbar a:hover {
             background-color: #66B2FF;
@@ -32,23 +33,18 @@
             color: #FFFFFF;
         }
         .content {
-            margin: 0 15%; /* Set margin to 15% of the page */
+            margin: 0 15%;
+            padding: 2rem 0;
         }
         .container {
             display: flex;
-            align-items: center;
+            align-items: flex-start;
             justify-content: space-between;
-            height: 80vh;
+            animation: fadeIn 2s ease-in-out;
         }
-        .text {
+        .text, .info {
             flex: 1;
-            text-align: left;
-            margin-right: 20px; /* Add margin to the right of the text */
-        }
-        .info {
-            flex: 1;
-            text-align: left;
-            margin-left: 20px; /* Add margin to the left of the info section */
+            padding: 0 1rem;
         }
         .info h2 {
             font-size: 2.5rem;
@@ -67,6 +63,22 @@
             font-size: 1.5rem;
             margin: 1rem 0;
             color: #FFFFFF;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .content {
+                margin: 0 5%;
+            }
+            .text, .info {
+                padding: 0;
+                margin-bottom: 2rem;
+            }
         }
     </style>
 </head>

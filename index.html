@@ -25,6 +25,7 @@
             text-decoration: none;
             font-weight: bold;
             padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
         }
         .navbar a:hover {
             background-color: #66B2FF;
@@ -32,38 +33,42 @@
             color: #FFFFFF;
         }
         .content {
-            margin: 0 15%; /* Set margin to 15% of the page */
+            margin: 0 15%;
         }
         .container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             height: 80vh;
+            text-align: center;
         }
         .text {
-            flex: 2;
-            text-align: left;
-            margin: 0 40px 0 180px; /* Adjust margin to the left and right of the text */
-        }
-        .image {
-            flex: 1;
-            text-align: right;
-            margin-left: 20px; /* Adjust margin to the left of the image */
-            margin-right: 180px; /* Increase margin to the right of the image */
-        }
-        img {
-            height: 320px;
-            width: auto;
+            animation: fadeIn 2s ease-in-out;
         }
         .text h1 {
-            font-size: 3rem;
+            font-size: 4rem;
             margin: 0;
             color: #4F97FF;
         }
         .text p {
-            font-size: 1.5rem;
+            font-size: 2rem;
             margin: 1rem 0;
             color: #FFFFFF;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @media (max-width: 768px) {
+            .content {
+                margin: 0 5%;
+            }
+            .text h1 {
+                font-size: 3rem;
+            }
+            .text p {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -80,18 +85,7 @@
                 <h1>Daniel Hernandez</h1>
                 <p><strong>Welcome to my portfolio. I'm a CS undergraduate at the University of Central Florida. Explore this website to learn more about me!</strong></p>
             </div>
-            <div class="image">
-                <img src="src/avatar.png" alt="My Image">
-            </div>
         </div>
     </div>
 </body>
 </html>
-<style>
-    .text h1 {
-        font-size: 4rem; /* Increase font size of the heading */
-    }
-    .text p {
-        font-size: 2rem; /* Increase font size of the paragraph */
-    }
-</style>

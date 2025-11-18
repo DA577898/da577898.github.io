@@ -32,50 +32,45 @@
             color: #FFFFFF;
         }
         .content {
-            margin: 0 15%; /* Set margin to 15% of the page */
-        }
-        .container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: auto;
+            margin: 0 15%;
             padding: 2rem 0;
         }
-        .pdf-container {
-            width: 100%;
-            height: 90vh;
-            border: 2px solid #4F97FF;
-            border-radius: 10px;
+        .container {
+            text-align: center;
         }
         .title {
             font-size: 3rem;
             color: #4F97FF;
-            margin-bottom: 0%;
         }
         .description {
             font-size: 1.5rem;
             color: #FFFFFF;
             margin-bottom: 2rem;
-            text-align: center;
         }
         .portfolio {
-            display: flex;
-            justify-content: space-around;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
         }
         .card {
             background-color: #2D4A9D;
             border-radius: 10px;
             padding: 1rem;
-            width: 30%;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             text-decoration: none;
+            color: inherit;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
         }
+        .card:nth-child(1) { animation-delay: 0.2s; }
+        .card:nth-child(2) { animation-delay: 0.4s; }
+        .card:nth-child(3) { animation-delay: 0.6s; }
         .card:hover {
-            transform: scale(1.05);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         .card img {
             height: 100px;
@@ -88,14 +83,15 @@
         }
         .card h3 {
             color: #4F97FF;
-            margin: 0.5rem 0;
         }
-        .card p {
-            color: #FFFFFF;
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        .card a {
-            text-decoration: none;
-            color: inherit;
+        @media (max-width: 768px) {
+            .content {
+                margin: 0 5%;
+            }
         }
     </style>
 </head>
@@ -118,12 +114,12 @@
                 <p>Worked on the front-end development of the company's main website.</p>
             </a>
             <a href="https://www.partyphotoorlando.com" class="card">
-                <img src="/src/partyphotoorlando.png" alt="Company 2 Logo">
+                <img src="/src/partyphotoorlando.png" alt="PartyPhotoOrlando">
                 <h3>PartyPhotoOrlando</h3>
                 <p>Redesigned the website to enhance user experience and visual appeal.</p>
             </a>
             <a href="https://maverick.eecs.ucf.edu/seniordesign/fa2024sp2025/g02/" class="card">
-                <img src="/src/ucf.png" alt="Company 3 Logo">
+                <img src="/src/ucf.png" alt="UCF Senior Design">
                 <h3>Senior Design Project</h3>
                 <p>Developed the website for electrical engineering students' senior design project.</p>
             </a>
